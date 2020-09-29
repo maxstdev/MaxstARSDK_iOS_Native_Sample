@@ -1,0 +1,6 @@
+framework module MaxstVideoFramework {
+  umbrella header "MaxstVideoFramework.h"
+
+  export *
+  module * { export * }
+}

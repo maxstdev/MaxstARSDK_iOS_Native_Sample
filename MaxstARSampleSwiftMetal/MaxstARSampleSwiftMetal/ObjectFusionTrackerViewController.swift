@@ -125,8 +125,6 @@ class ObjectFusionTrackerViewController: UIViewController, MTKViewDelegate {
                 cameraQuad.draw(commandEncoder: commandEncoder, image: backgroundImage)
             }
             
-            featurePoint.draw(commandEncoder: commandEncoder, trackingManager: trackingManager, projectionMatrix: projectionMatrix)
-            
             if fusionState == 1 {
                 DispatchQueue.main.async {
                     self.guideView.isHidden = true
@@ -139,30 +137,31 @@ class ObjectFusionTrackerViewController: UIViewController, MTKViewDelegate {
 
             let trackingCount:Int32 = result.getCount()
             
-            if(trackingCount > 0 && fusionState == 1) {
-                let trackable:MasTrackable = result.getTrackable(0)
-                let poseMatrix:matrix_float4x4 = trackable.getPose()
+            if(guideInfo != nil) {
                 
-                textureCube.setProjectionMatrix(projectionMatrix: projectionMatrix)
-                textureCube.setPoseMatrix(poseMatrix: poseMatrix)
-                textureCube.setTranslation(x: 0.0, y: 0.0, z: -0.15)
-                textureCube.setScale(x: 0.3, y: 0.3, z: 0.3)
-                textureCube.draw(commandEncoder: commandEncoder)
+                let boundingBoxPointer = guideInfo.getBoundingBox()
+                let trackingCount:Int32 = result.getCount()
                 
-                if(guideInfo != nil) {
-                    let anchors = guideInfo.getTagAnchors()
-                    if anchors != nil {
-                        for eachAnchor in anchors! {
-                            let anchor = eachAnchor as! MasTagAnchor
-                            let pin:PinRenderer = PinRenderer(device: self.device, color: UIColor.red)
-                            pin.setProjectionMatrix(projectionMatrix: projectionMatrix)
-                            pin.setPoseMatrix(poseMatrix: poseMatrix)
-                            pin.setTranslation(x: anchor.getPosition().x, y: anchor.getPosition().y, z: anchor.getPosition().z)
-                            pin.setRotation(x: degreesToRadians(degree: -90), y: 0, z: 0)
-                            pin.setScale(x: 0.02, y: 0.02, z: 0.02)
-                            pin.draw(commandEncoder: commandEncoder)
-                        }
+                if(trackingCount > 0 && fusionState == 1) {
+                    let trackable:MasTrackable = result.getTrackable(0)
+                    let poseMatrix:matrix_float4x4 = trackable.getPose()
+
+                    textureCube.setProjectionMatrix(projectionMatrix: projectionMatrix)
+                    textureCube.setPoseMatrix(poseMatrix: poseMatrix)
+                    textureCube.setTranslation(x: 0.0, y: 0.0, z: -0.15)
+                    textureCube.setScale(x: 0.3, y: 0.3, z: 0.3)
+                    textureCube.draw(commandEncoder: commandEncoder)
+                    
+                    let faceCount  = Int(boundingBoxPointer![6])
+                    boundingBox.clearFace()
+                    for i in 0..<faceCount {
+                        boundingBox.addFace(face: Int(boundingBoxPointer![7+i]))
                     }
+                    boundingBox.setProjectionMatrix(projectionMatrix: projectionMatrix)
+                    boundingBox.setPoseMatrix(poseMatrix: poseMatrix)
+                    boundingBox.setTranslation(x: boundingBoxPointer![0], y: boundingBoxPointer![1], z: boundingBoxPointer![2])
+                    boundingBox.setScale(x: boundingBoxPointer![3], y: boundingBoxPointer![4], z: boundingBoxPointer![5])
+                    boundingBox.draw(commandEncoder: commandEncoder)
                 }
             }
             

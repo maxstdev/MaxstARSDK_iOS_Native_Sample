@@ -165,20 +165,6 @@ class ObjectTrackerViewController: UIViewController, MTKViewDelegate {
                     boundingBox.setTranslation(x: boundingBoxPointer![0], y: boundingBoxPointer![1], z: boundingBoxPointer![2])
                     boundingBox.setScale(x: boundingBoxPointer![3], y: boundingBoxPointer![4], z: boundingBoxPointer![5])
                     boundingBox.draw(commandEncoder: commandEncoder)
-                    
-                    let anchors = guideInfo.getTagAnchors()
-                    if anchors != nil {
-                        for eachAnchor in anchors! {
-                            let anchor = eachAnchor as! MasTagAnchor
-                            let pin:PinRenderer = PinRenderer(device: self.device, color: UIColor.red)
-                            pin.setProjectionMatrix(projectionMatrix: projectionMatrix)
-                            pin.setPoseMatrix(poseMatrix: poseMatrix)
-                            pin.setTranslation(x: anchor.getPosition().x, y: anchor.getPosition().y, z: anchor.getPosition().z)
-                            pin.setRotation(x: degreesToRadians(degree: -90), y: 0, z: 0)
-                            pin.setScale(x: 0.02, y: 0.02, z: 0.02)
-                            pin.draw(commandEncoder: commandEncoder)
-                        }
-                    }
                 }
             }
             

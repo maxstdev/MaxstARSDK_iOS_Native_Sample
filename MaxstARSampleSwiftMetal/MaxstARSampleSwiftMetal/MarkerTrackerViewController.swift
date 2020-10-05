@@ -52,30 +52,6 @@ class MarkerTrackerViewController: UIViewController, MTKViewDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    let minimumZoom: CGFloat = 1.0
-    let maximumZoom: CGFloat = 5.0
-    var lastZoomFactor: CGFloat = 1.0
-    
-    func minMaxZoom(factor: CGFloat, maxFactor: CGFloat) -> CGFloat {
-        return min(min(max(factor, minimumZoom), maximumZoom), maxFactor)
-    }
-    
-    @IBAction func ZoomInOut(_ sender: Any) {
-        let recognizer = sender as! UIPinchGestureRecognizer
-        let pinch_scale = CGFloat(recognizer.scale)
-        
-        let newScaleFactor = minMaxZoom(factor: pinch_scale * lastZoomFactor, maxFactor: CGFloat(cameraDevice.getMaxZoomValue()))
-        
-        switch recognizer.state {
-        case .began: fallthrough
-        case .changed: cameraDevice.setZoom(Float(newScaleFactor))
-        case .ended:
-            lastZoomFactor = minMaxZoom(factor: newScaleFactor, maxFactor: CGFloat(cameraDevice.getMaxZoomValue()))
-            cameraDevice.setZoom(Float(lastZoomFactor))
-        default: break
-        }
-    }
-    
     func setupMetal() {
         self.metalView?.delegate = self
         self.metalView?.device = MTLCreateSystemDefaultDevice()!

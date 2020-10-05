@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wXs-Oh-9Gz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wXs-Oh-9Gz">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -439,7 +439,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1920*1080" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpp-Tf-MAc">
-                                                    <rect key="frame" x="26" y="11.5" width="85" height="21"/>
+                                                    <rect key="frame" x="26" y="11.5" width="84" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -533,6 +533,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="U97-zF-4O7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U6R-i6-rNu" firstAttribute="top" secondItem="U97-zF-4O7" secondAttribute="top" constant="15" id="3hJ-lm-CxE"/>
@@ -552,7 +553,6 @@
                             <constraint firstItem="U6R-i6-rNu" firstAttribute="leading" secondItem="U97-zF-4O7" secondAttribute="leading" constant="15" id="gGw-xa-zu0"/>
                             <constraint firstItem="3W0-Mn-1Id" firstAttribute="top" secondItem="v5E-1G-DnP" secondAttribute="top" id="lRT-l8-Ym0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="U97-zF-4O7"/>
                     </view>
                     <connections>
                         <outlet property="extendSwitch" destination="fbg-Ls-zfA" id="8Xz-o9-Zg2"/>
@@ -588,6 +588,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="mkZ-y6-fqT"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="T0h-EQ-Yzu" firstAttribute="leading" secondItem="mkZ-y6-fqT" secondAttribute="leading" constant="15" id="HpW-2d-d1r"/>
@@ -598,7 +599,6 @@
                             <constraint firstAttribute="bottom" secondItem="Znf-3Z-gE0" secondAttribute="bottom" id="f9m-gv-QgO"/>
                             <constraint firstItem="Znf-3Z-gE0" firstAttribute="top" secondItem="h9F-ag-6LF" secondAttribute="top" id="vjG-E1-Os3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mkZ-y6-fqT"/>
                     </view>
                     <connections>
                         <outlet property="metalView" destination="Znf-3Z-gE0" id="Jpt-Fy-Yb5"/>
@@ -620,20 +620,21 @@
                             <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="riI-QV-XbY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mtkView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3U-qd-ayp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3U-qd-ayp">
                                 <rect key="frame" x="133.5" y="617" width="108" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="mGr-lP-F9S"/>
                                 </constraints>
                                 <state key="normal" title="Start Tracking">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="doTrackingState:" destination="XrI-Of-uzp" eventType="touchUpInside" id="3PV-ac-dVG"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ePe-Q6-gJl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="riI-QV-XbY" secondAttribute="bottom" id="AXc-5H-SU1"/>
@@ -643,7 +644,6 @@
                             <constraint firstAttribute="trailing" secondItem="riI-QV-XbY" secondAttribute="trailing" id="ktp-0e-nw9"/>
                             <constraint firstItem="W3U-qd-ayp" firstAttribute="centerX" secondItem="riI-QV-XbY" secondAttribute="centerX" id="q4i-LN-29p"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ePe-Q6-gJl"/>
                     </view>
                     <connections>
                         <outlet property="metalView" destination="riI-QV-XbY" id="2wN-Ip-HtK"/>
@@ -684,6 +684,7 @@
                                 </connections>
                             </mtkView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="w4r-k8-vo4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rHC-cD-R8C" secondAttribute="trailing" id="DRI-AG-l4N"/>
@@ -691,7 +692,6 @@
                             <constraint firstAttribute="bottom" secondItem="rHC-cD-R8C" secondAttribute="bottom" id="XPc-aK-2Fg"/>
                             <constraint firstItem="rHC-cD-R8C" firstAttribute="leading" secondItem="S4u-H5-Uas" secondAttribute="leading" id="Xzw-m7-sEb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="w4r-k8-vo4"/>
                     </view>
                     <navigationItem key="navigationItem" id="QAm-Vu-lQp"/>
                     <connections>
@@ -757,6 +757,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pw3-Ac-CS2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YRf-ww-O8Y" firstAttribute="leading" secondItem="5Yg-Vr-onw" secondAttribute="leading" id="2Cb-r6-2Mi"/>
@@ -774,7 +775,6 @@
                             <constraint firstItem="gFr-Kr-vKO" firstAttribute="leading" secondItem="opX-P3-WUx" secondAttribute="trailing" constant="2" id="iO1-7N-xSk"/>
                             <constraint firstItem="opX-P3-WUx" firstAttribute="leading" secondItem="Pw3-Ac-CS2" secondAttribute="leading" constant="15" id="yab-7f-HEv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Pw3-Ac-CS2"/>
                     </view>
                     <connections>
                         <outlet property="codeLabel" destination="IyX-Cm-OX7" id="0eg-dX-bMe"/>
@@ -940,6 +940,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4P6-uM-d9w"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w27-Ko-leG" firstAttribute="top" secondItem="4UN-cy-G3q" secondAttribute="top" id="50x-r1-UnC"/>
@@ -953,7 +954,6 @@
                             <constraint firstItem="Pp1-ZR-XzF" firstAttribute="top" secondItem="4P6-uM-d9w" secondAttribute="top" constant="15" id="dhR-vp-OUE"/>
                             <constraint firstItem="cKQ-Dw-z7Q" firstAttribute="leading" secondItem="Pp1-ZR-XzF" secondAttribute="trailing" constant="10" id="eac-hm-AvW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4P6-uM-d9w"/>
                     </view>
                     <connections>
                         <outlet property="flashSwitch" destination="m2R-8f-ryr" id="Mng-tp-s85"/>
@@ -995,9 +995,6 @@
                             <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="YDH-6a-84j">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="dfz-bS-DYT" appends="YES" id="rYJ-X2-Bxf"/>
-                                </connections>
                             </mtkView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-86-FWv">
                                 <rect key="frame" x="15" y="59" width="345" height="50"/>
@@ -1011,6 +1008,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ygy-wn-970"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YDH-6a-84j" firstAttribute="top" secondItem="ueh-Yn-IqI" secondAttribute="top" id="6CF-GU-kDt"/>
@@ -1021,7 +1019,6 @@
                             <constraint firstItem="YDH-6a-84j" firstAttribute="leading" secondItem="ueh-Yn-IqI" secondAttribute="leading" id="lcM-RF-uUD"/>
                             <constraint firstItem="ygy-wn-970" firstAttribute="trailing" secondItem="Yu7-86-FWv" secondAttribute="trailing" constant="15" id="vVO-G8-hrR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ygy-wn-970"/>
                     </view>
                     <connections>
                         <outlet property="markerLabel" destination="Yu7-86-FWv" id="Lp9-fM-YtS"/>
@@ -1029,11 +1026,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzt-r7-L5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="dfz-bS-DYT">
-                    <connections>
-                        <action selector="ZoomInOut:" destination="llD-j2-wHb" id="irN-3e-fWm"/>
-                    </connections>
-                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1602" y="-519"/>
         </scene>
@@ -1049,6 +1041,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mtkView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5XN-ZL-vS7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ikT-hI-M29" firstAttribute="top" secondItem="QVe-A4-BVL" secondAttribute="top" id="9RB-fn-6yO"/>
@@ -1056,7 +1049,6 @@
                             <constraint firstAttribute="trailing" secondItem="ikT-hI-M29" secondAttribute="trailing" id="QiR-5q-jC9"/>
                             <constraint firstItem="ikT-hI-M29" firstAttribute="leading" secondItem="QVe-A4-BVL" secondAttribute="leading" id="Xlp-gT-y5l"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5XN-ZL-vS7"/>
                     </view>
                     <connections>
                         <outlet property="metalView" destination="ikT-hI-M29" id="L8p-Nm-Ze9"/>
@@ -1099,6 +1091,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="oKN-52-0eb"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AUL-bQ-A82" firstAttribute="leading" secondItem="oKN-52-0eb" secondAttribute="leading" id="EYH-d4-2B6"/>
@@ -1109,7 +1102,6 @@
                             <constraint firstItem="Clk-4x-41D" firstAttribute="leading" secondItem="X2M-3g-FDZ" secondAttribute="leading" id="isj-Kh-x2S"/>
                             <constraint firstItem="oKN-52-0eb" firstAttribute="bottom" secondItem="AUL-bQ-A82" secondAttribute="bottom" id="rLb-mE-U1u"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oKN-52-0eb"/>
                     </view>
                     <connections>
                         <outlet property="guideView" destination="AUL-bQ-A82" id="M49-Kl-4Pk"/>
@@ -1153,6 +1145,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="xxz-Je-Kbl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rPX-17-rjb" firstAttribute="leading" secondItem="AjN-7W-tv7" secondAttribute="leading" id="0KD-rP-Ska"/>
@@ -1163,7 +1156,6 @@
                             <constraint firstItem="v4w-p5-zKR" firstAttribute="bottom" secondItem="xxz-Je-Kbl" secondAttribute="bottom" id="bS4-VK-BKI"/>
                             <constraint firstItem="v4w-p5-zKR" firstAttribute="leading" secondItem="AjN-7W-tv7" secondAttribute="leading" id="eRS-yU-Q7H"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xxz-Je-Kbl"/>
                     </view>
                     <connections>
                         <outlet property="guideView" destination="v4w-p5-zKR" id="Ndh-ae-cwT"/>
@@ -1218,6 +1210,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jhE-lZ-GWR"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jhE-lZ-GWR" firstAttribute="trailing" secondItem="RxA-sU-qDa" secondAttribute="trailing" constant="15" id="5X1-rf-2Ej"/>
@@ -1231,7 +1224,6 @@
                             <constraint firstItem="RxA-sU-qDa" firstAttribute="leading" secondItem="jhE-lZ-GWR" secondAttribute="leading" constant="15" id="nhN-T5-tHU"/>
                             <constraint firstAttribute="bottom" secondItem="2Oe-yk-Qfc" secondAttribute="bottom" id="zf0-Qa-pRc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jhE-lZ-GWR"/>
                     </view>
                     <connections>
                         <outlet property="guideView" destination="cdi-b9-xAM" id="l56-uk-p3L"/>
@@ -1286,6 +1278,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="qFK-7u-QBD"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g87-y4-oa8" firstAttribute="top" secondItem="qFK-7u-QBD" secondAttribute="top" constant="15" id="0ha-Se-qYO"/>
@@ -1299,7 +1292,6 @@
                             <constraint firstItem="3VT-EN-pwn" firstAttribute="trailing" secondItem="qFK-7u-QBD" secondAttribute="trailing" id="roS-TQ-FQv"/>
                             <constraint firstAttribute="trailing" secondItem="qgb-3X-bgW" secondAttribute="trailing" id="xeo-2b-L2c"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qFK-7u-QBD"/>
                     </view>
                     <connections>
                         <outlet property="guideView" destination="3VT-EN-pwn" id="dB6-Nh-qG3"/>
@@ -1325,14 +1317,14 @@
                                     <outletCollection property="gestureRecognizers" destination="yq5-ky-tMA" appends="YES" id="OSP-iI-cfn"/>
                                 </connections>
                             </mtkView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h30-SA-EiM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h30-SA-EiM">
                                 <rect key="frame" x="133.5" y="560" width="108" height="30"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="R88-d7-1SO"/>
                                 </constraints>
                                 <state key="normal" title="Start Tracking">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="doTrackingState:" destination="tBJ-fc-4BZ" eventType="touchUpInside" id="E2r-ga-TCK"/>
@@ -1359,6 +1351,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gNQ-ym-Llo"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sNy-O5-Rur" secondAttribute="trailing" id="3bJ-yA-EpF"/>
@@ -1371,7 +1364,6 @@
                             <constraint firstItem="gNQ-ym-Llo" firstAttribute="bottom" secondItem="h30-SA-EiM" secondAttribute="bottom" constant="77" id="cL7-cn-fHS"/>
                             <constraint firstItem="gWg-MQ-CUw" firstAttribute="bottom" secondItem="gNQ-ym-Llo" secondAttribute="bottom" id="f4T-Hb-Hkj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gNQ-ym-Llo"/>
                     </view>
                     <connections>
                         <outlet property="guideView" destination="gWg-MQ-CUw" id="LQQ-0Q-wa6"/>
@@ -1390,4 +1382,12 @@
             <point key="canvasLocation" x="4391" y="-1245"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
